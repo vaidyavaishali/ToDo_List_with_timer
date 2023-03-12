@@ -10,6 +10,7 @@ const ToDo = () => {
     const [resume, setResume] = useState(true);
     const [log, set_log] = useState(true)
     const navigate = useNavigate();
+    const name = username.split("@")[0]
     const check = () => {
         if (data.length === 0 || data[data.length - 1].Status === "completed") {
             navigate('/newtodo')
@@ -29,7 +30,7 @@ const ToDo = () => {
                     </h1>
                     <p style={{ float: "right", "marginRight": "10%", marginLeft: "75%", marginTop: "-2%" }} onClick={Set_Logiout}>
                         <i class="fa fa-user" aria-hidden="true" style={{marginRight:"10px"}}></i>
-                        {username}
+                        {name}
                         {!log ?
                             <h4 onClick={() => Logout()} className="logout">LogOut</h4> : ""}
 
